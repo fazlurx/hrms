@@ -6,9 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const sequelize = require('./util/database');
+// const sequelize = require('./util/database');
 var app = express();
-const User = require('./models/user');
+// const User = require('./models/user');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade'); 
@@ -27,12 +27,12 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-try {
-  sequelize.authenticate();
-  console.log('Connection has been established successfully.');
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
+// try {
+//   sequelize.authenticate();
+//   console.log('Connection has been established successfully.');
+// } catch (error) {
+//   console.error('Unable to connect to the database:', error);
+// }
 // sequelize
 //   .sync()
 //   .then((result) => {
